@@ -1107,6 +1107,161 @@ body {
     }
 }
 
+/* Skill Logo Styles */
+.skill-logo-bullet {
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+}
+
+.skill-inline-logo {
+    margin-left: 8px;
+    font-size: 1.1rem;
+    vertical-align: middle;
+}
+
+/* Certifications Section */
+.certifications-section {
+    padding: 6rem 0;
+    background: var(--spotify-black);
+    position: relative;
+    border-top: 1px solid rgba(29, 185, 84, 0.08);
+}
+
+.certifications-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    width: 100%;
+}
+
+.certifications-section-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    text-align: center;
+    margin-bottom: 5rem;
+    letter-spacing: -1px;
+    position: relative;
+    animation: fadeInUp 1s ease-out;
+}
+
+.certifications-section-title::after {
+    content: '';
+    display: block;
+    width: 150px;
+    height: 4px;
+    background: var(--spotify-green);
+    margin: 1.5rem auto 0;
+    border-radius: 2px;
+}
+
+.certifications-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    align-items: stretch;
+}
+
+.certificate-card {
+    background: rgba(29, 185, 84, 0.05);
+    border: 1px solid rgba(29, 185, 84, 0.1);
+    border-radius: 20px;
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    position: relative;
+    /* overflow removed to allow zoom pop-out */
+    transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease, z-index 0.4s ease;
+    backdrop-filter: blur(10px);
+    z-index: 1;
+}
+
+.certificate-card:hover {
+    transform: translateY(-8px);
+    background: rgba(29, 185, 84, 0.08);
+    border-color: rgba(29, 185, 84, 0.3);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    z-index: 100;
+}
+
+.certificate-banner {
+    width: 100%;
+    height: 220px;
+    border-radius: 12px;
+    /* overflow removed to allow zoom pop-out */
+    position: relative;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.certificate-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* ensures whole certificate fits without cutting off */
+    display: block;
+    position: relative;
+    z-index: 1;
+    border-radius: 12px;
+    cursor: zoom-in;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+}
+
+.certificate-banner img:hover {
+    transform: scale(2.2);
+    z-index: 1000;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8);
+    background: var(--spotify-black); /* Adds dark background behind zoomed transparent PNGs if any */
+}
+
+.certificate-info {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.certificate-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.3;
+}
+
+.certificate-issuer {
+    font-size: 1rem;
+    color: var(--spotify-green);
+    font-weight: 600;
+}
+
+.certificate-date {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.btn-view-credential {
+    align-self: flex-start;
+    padding: 0.75rem 1.5rem;
+    background: transparent;
+    border: 1px solid rgba(29, 185, 84, 0.5);
+    color: var(--text-primary);
+    border-radius: 30px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+}
+
+.btn-view-credential:hover {
+    background: var(--spotify-green);
+    color: var(--spotify-black);
+    border-color: var(--spotify-green);
+}
+
 /* Projects Section */
 .projects-section {
     padding: 6rem 0;
@@ -1438,8 +1593,21 @@ body {
     font-size: 1.1rem;
     font-weight: 700;
     color: var(--text-primary);
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.25rem;
     line-height: 1.3;
+}
+
+.profile-stats {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.75rem;
+}
+
+.stat-highlight {
+    color: var(--spotify-green);
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-left: 0.2rem;
 }
 
 .visit-profile-btn {

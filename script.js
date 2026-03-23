@@ -192,5 +192,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-
-
+// Fetch live coding profile stats from public API
+document.addEventListener('DOMContentLoaded', async () => {
+    try {
+        const res = await fetch('https://alfa-leetcode-api.onrender.com/rishu_ai/solved');
+        if (res.ok) {
+            const data = await res.json();
+            if (data.solvedProblem !== undefined && data.solvedProblem !== null) {
+                document.getElementById('lc-solved').textContent = data.solvedProblem;
+            }
+        }
+    } catch (error) {
+        console.error('Error fetching stats from proxy:', error);
+    }
+});
